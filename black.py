@@ -39,7 +39,7 @@ def black(cp=None, f=None, k=None, t=None, r=None, v=None, price=None, full=Fals
         if not calibration and full:
             return {
                 "price": price,
-                "delta": optionType * norm.cdf(d1),
+                "delta": optionType * norm.cdf(optionType*d1),
                 "gamma": norm.pdf(d1)/(f*v*sqrt(t)),
                 "vega": f*norm.pdf(d1)*sqrt(t)
             }
